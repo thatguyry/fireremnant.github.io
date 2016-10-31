@@ -6,7 +6,7 @@ $(document).ready(function() {
 	});
 
 	// load footer with callback
-	$( "footer" ).load( "sections/footer.html" , function() {
+	$( "#footer" ).load( "sections/footer.html" , function() {
 		console.log("footer was loaded successfully.");
 	});
 
