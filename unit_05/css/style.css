@@ -52,6 +52,8 @@ header {
 	#main-menu {
 		background-color: blue;
 		float: right;
+	    height: 20px;
+	    margin: 20px 20px;
 	}
 
 	#main-menu li{
