@@ -121,13 +121,13 @@ footer {
 
 /*
   Temporary
-*****************/
 
 header, nav, aside, article, footer, figure, div, section {
 	border: 1px black solid;
     padding: 20px;
 }
 
+*****************/
 
 header {
 	background-color: #FFED74;
