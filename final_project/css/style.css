@@ -30,6 +30,16 @@ h3 {
 	margin-bottom: .31em;
 }
 
+h5 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 1.5em;
+	color: #666;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}
+
 /* Anchors */
 a {
 	color: black;
@@ -64,6 +74,10 @@ p {
 	margin: 0 auto;
 }
 
+.header-margin {
+	margin: 20px;
+}
+
 .clear {
 	clear: both;
 }
@@ -77,31 +91,33 @@ p {
 	margin-right: .6em;
 }
 
-.clear-margin {
-	margin: 0!important;
-}
-
 .sticky {
     top: 0;
     position: fixed;
 }
 
+.page {
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.disabled {
+	background-color: red;
+	position: relative;
+	z-index: 9999;
+	pointer-events: none;
+}
+
 /*
   Header
 *****************/
-header {
-	height: 1100px;
-}
 
-	nav {
+	header {
 		width: 100%;
 		height: 100px;
 		z-index: 999;
-		/*background-color: rgba(255, 255, 255, 0.5); */
-	}
-
-	#nav-margin {
-		padding: 20px;
 	}
 
 	#logo {
@@ -124,30 +140,31 @@ header {
 	#main-menu {
 		float: right;
 	    height: 20px;
-	    margin: 20px 20px;
+	    margin: 20px;
 	}
 
-	#main-menu li {
+	nav {
 		display: inline;
 		font-family: 'Roboto', sans-serif;
 		font-size: 16px;
 		margin-right: 1.1em;
 	}		
 
-	#main-menu li a {
+	nav a {
 		text-decoration: none;
+		margin: .6em;
+		padding: 2px;
 	}	
 
 /*
   Section Hero
 *****************/
-section {
-}
 
 #section-hero {
 	position: relative;
 	margin: 0 auto;
 	width: 1110px;
+	height: 1000px;
 }
 
 	#hero-photo {
@@ -206,7 +223,7 @@ section {
   Footer
 *****************/
 footer {
-	margin: 5em 0 10em 0;
+	margin: 5em 0 15em 0;
 	padding-left: 21%;
 }
 
