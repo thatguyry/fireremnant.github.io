@@ -1,4 +1,4 @@
-// START LOAD SECTIONS
+// START LOADING SECTIONS
 
 // load nav with callback
 $( "#main-menu" ).load( "sections/nav.html" , function() {
@@ -10,7 +10,7 @@ $( "#footer" ).load( "sections/footer.html" , function() {
 	console.log("footer was loaded successfully.");
 });
 
-// END LOAD SECTIONS
+// END LOADING SECTIONS
 
 // START STICKY
 
@@ -106,3 +106,13 @@ $(thumb).click(function() {
 		$('html, body').animate({ scrollTop: 0 }, 0);
 	});
 });
+
+// START URL HANDLING
+
+var pathname = window.location.pathname; // Returns path only
+var url      = window.location.href;     // Returns full URL
+
+console.log(pathname + "pathname");
+console.log(url + "url");
+
+// END URL HANDLING
