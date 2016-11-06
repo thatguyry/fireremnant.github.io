@@ -118,9 +118,4 @@ console.log(pathname + "pathname");
 console.log(url + "url");
 // https://fireremnant.github.io/final_project/index.htmlurl
 
-function reloadPageWithHash() {
-  var initialPage = location.pathname;
-  location.replace('http://example.com/#' + initialPage);
-}
-
 // END URL HANDLING
