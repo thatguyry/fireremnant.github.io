@@ -106,11 +106,3 @@ $(thumb).click(function() {
 		$('html, body').animate({ scrollTop: 0 }, 0);
 	});
 });
-
-// START URL HANDLING
-
-var location = "https://fireremnant.github.io/final_project/";
-var pathname = window.location.pathname; // Returns path only
-var url      = window.location.href;     // Returns full URL
-
-// END URL HANDLING
