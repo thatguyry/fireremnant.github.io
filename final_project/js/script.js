@@ -109,10 +109,18 @@ $(thumb).click(function() {
 
 // START URL HANDLING
 
+var location = "https://fireremnant.github.io/final_project/";
 var pathname = window.location.pathname; // Returns path only
 var url      = window.location.href;     // Returns full URL
 
 console.log(pathname + "pathname");
+// /final_project/index.htmlpathname
 console.log(url + "url");
+// https://fireremnant.github.io/final_project/index.htmlurl
+
+function reloadPageWithHash() {
+  var initialPage = location.pathname;
+  location.replace('http://example.com/#' + initialPage);
+}
 
 // END URL HANDLING

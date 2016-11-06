@@ -110,6 +110,15 @@ p {
 	pointer-events: none;
 }
 
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
 /*
   Header
 *****************/
@@ -164,7 +173,7 @@ p {
 	position: relative;
 	margin: 0 auto;
 	width: 1110px;
-	height: 1000px;
+	/*height: 1000px;*/
 }
 
 	#hero-photo {
