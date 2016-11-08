@@ -296,3 +296,7 @@ section {
 }
 
 *****************/
+
+#main-menu a {
+	background-color: red;
+}
