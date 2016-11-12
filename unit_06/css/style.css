@@ -1,0 +1,163 @@
+/*
+  Date: November 2016
+  Version: 1.0
+  Author: Ryan Schrader
+*/
+
+/* Imports */
+@import url("reset.css");
+
+/***** Start Global *****/
+
+/* Body */
+
+/* Headings */
+
+/* Anchors */
+
+/* Paragraphs */
+
+/* Lists */
+
+/* Quotes */
+
+.wrapper {
+	margin: 0 auto;
+}
+
+/*
+  Header
+*****************/
+header {
+}
+
+	nav {
+		padding: 30px;
+		height: 60px;
+	}
+
+	#logo {
+		float: left;
+		width: 60px;
+		height: 60px;
+	}
+
+	#status {
+		background-color: blue;
+		float: left;
+		height: 20px;
+		margin: 20px 20px;
+	}
+
+	#main-menu {
+		background-color: blue;
+		float: right;
+	    height: 20px;
+	    margin: 20px 20px;
+	}
+
+	#main-menu li{
+		display: inline;
+	}	
+
+
+/*
+  Section Hero
+*****************/
+section {
+}
+
+#section-hero {
+	position: relative;
+	margin: 0 auto;
+	width: 1110px;
+	height: 1000px;
+}
+
+	#hero-photo {
+		position: absolute;
+		right: 0;
+		width: 740px;
+		height: 925px;
+	}
+
+	#txt-intro {
+		background-color: red;
+		position: absolute;
+		left: 0;
+		width: 500px;
+	}
+
+/*
+  Section Work
+*****************/
+
+#section-work {
+	margin: 0 auto;
+	width: 1600px;
+	/* Fix spacing between figures 
+	font-size: 0; */
+}
+
+	/* Figure */
+
+	figure {
+		display: inline-block;
+		width: 710px;
+		height: 640px;
+		margin: 1%;
+	}
+
+	figcaption {
+	}
+
+
+/*
+  Footer
+*****************/
+footer {
+	height: 300px;
+}
+
+/*
+  Temporary
+*****************/
+
+header, nav, aside, article, footer, figure, div, section {
+	border: 1px black solid;
+    padding: 20px;
+}
+
+
+header {
+	background-color: #FFED74;
+}
+
+nav {
+	background-color: #E8C66A;
+}
+
+aside {
+	background-color: #FFC675;
+}
+
+article {
+	background-color: #E89C6C;
+}
+
+figure {
+	background-color: #E89C6C;
+}
+
+footer {
+	background-color: #FF957E;
+}
+
+div {
+	background-color: #FFE2B8;
+}
+
+section {
+	background-color: #FFE2B8;
+}
+
