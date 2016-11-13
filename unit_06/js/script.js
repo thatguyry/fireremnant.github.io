@@ -12,6 +12,9 @@ function getPageFromURL() {
 function loadInitialContent(page) {
 
     switch (page) {
+        case "":
+             console.log("Initial load of content for page: " + page);
+            $(".content").load("content/one.html #one");       
         case "index":
             console.log("Initial load of content for page: " + page);
             $(".content").load("content/one.html #one");
