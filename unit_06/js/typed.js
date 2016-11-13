@@ -434,5 +434,27 @@
 		resetCallback: function() {}
 	};
 
+	// START TYPED
+
+	$(function(){
+	  $("#status").typed({
+	    strings: [
+	    	"Sentence one." ,
+	    	"Sentence two." ,
+	    	"Sentence three."],
+	    
+	    // typing speed
+	    typeSpeed: 0,
+		// time before backspacing
+	    backDelay: 3000,
+	    // loop
+	    loop: false,
+	    // show cursor
+	    showCursor: false,
+
+	  });
+	});
+
+	// END TYPED
 
 }(window.jQuery);
