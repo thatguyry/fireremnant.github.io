@@ -328,6 +328,10 @@ footer {
 		margin: 1em 0 2em 1em;		
 	}
 
+	header {
+		background: white;
+	}
+
 }
 
 @media screen and (max-width: 1024px) {
