@@ -304,15 +304,6 @@ footer {
   Media Queries
 *****************/
 
-@media screen and (max-width: 600px) {
-
-	/*hide status bar*/
-	#status {
-		display: none;
-	}
-
-}
-
 @media screen and (max-width: 710px) {
 
 	#work {
@@ -374,9 +365,11 @@ footer {
 
 	#hero-photo {
 		width: 90%;
-		float: none;
-		margin: 0 auto;
-		background: none;
+		position: relative;
+		float: left;
+	    margin: 40px 0 0 20px;
+	    height: 0;
+	    background: none;
 	}
 
 	.hero-photo-mobile {
@@ -384,12 +377,49 @@ footer {
 	}
 
 	#txt-intro {
-		width: 100%;
+		width: 80%;
 		position: relative;
+		float: left;
+		top: 12px;
+		margin-left: 20px;
 	}
 
 	#cta-work {
 		display: none;
+	}
+
+	/*hide status bar*/
+	#status {
+		display: none;
+	}
+
+/*	#txt-intro-p {
+		display: none;
+	}*/
+
+	#logo {
+	    margin: 20px 0 0 20px;
+	}
+
+	nav {
+	    margin-right: 20px;
+	}
+
+	section.hero {
+		height: 820px;
+	}
+
+	figcaption {
+	    margin: 1em 0 2em 20px;
+	}
+
+	.clearway {
+	    margin-left: 20px;
+	}
+
+	#contact-details {
+	    width: 70%;
+	    padding-left: 30%;
 	}
 
 }
