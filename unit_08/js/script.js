@@ -38,30 +38,32 @@ function loadInitialContent(page) {
 getPageFromURL();
 
 
-// STICKY HEADER
-var header = document.querySelector('header');
-var headerPosition = header.getBoundingClientRect();
-var placeholder = document.createElement('div');
+// // STICKY HEADER
+// var header = document.querySelector('header');
+// var headerPosition = header.getBoundingClientRect();
+// var placeholder = document.createElement('div');
 
-console.log("headerPosition: " + headerPosition.width + 'px');
+// console.log("headerPosition: " + headerPosition.width + 'px');
 
-// setup
-placeholder.style.width = headerPosition.width + 'px';
-placeholder.style.height = headerPosition.height + 'px';
-var isAdded = false;
+// // setup
+// // placeholder.style.width = headerPosition.width + 'px';
+// // placeholder.style.height = headerPosition.height + 'px';
+// placeholder.style.width = '100%';
+// placeholder.style.height = '100px';
+// var isAdded = false;
 
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset >= headerPosition.top && !isAdded) {
-        header.classList.add('sticky');
-        header.parentNode.insertBefore(placeholder, header);
-        isAdded = true;
-    } else if (window.pageYOffset == headerPosition.top && isAdded) {
-        console.log(isAdded);
-        header.classList.remove('sticky');
-        header.parentNode.removeChild(placeholder);
-        isAdded = false;
-    }
-});	
+// window.addEventListener('scroll', function() {
+//     if (window.pageYOffset >= headerPosition.top && !isAdded) {
+//         header.classList.add('sticky');
+//         header.parentNode.insertBefore(placeholder, header);
+//         isAdded = true;
+//     } else if (window.pageYOffset == headerPosition.top && isAdded) {
+//         console.log(isAdded);
+//         header.classList.remove('sticky');
+//         header.parentNode.removeChild(placeholder);
+//         isAdded = false;
+//     }
+// });	
 
 
 // URL HANDLING
@@ -77,6 +79,9 @@ function requestContent(file, data){
 
     // show loading
     $('.cover').addClass("show");
+    $('body').addClass("full");
+    // scroll to top
+    $('body').scrollTop(0);
     // request content
     console.log('Requesting content: ' + directory + file);
     $('.content').load(directory + file + " #" + data , function() {
@@ -94,9 +99,10 @@ function requestContent(file, data){
             setTimeout(function(){
                 $('.cover').fadeOut(function(){
                 $('.cover').removeClass("show");
+                $('body').removeClass("full");
                 });
 
-            }, 1500);
+            }, 0);
 
             $('.cover').css("display", "block"); 
         }
@@ -146,10 +152,10 @@ window.addEventListener('popstate', function(e){
 
 })
 
-// DISTRACTOR
+//DISTRACTOR
 // $(document).ready(function(){
 //     $(".distractor").fakeLoader({
-//         timeToHide:1000,
+//         timeToHide:1500,
 //         bgColor:"#fff",
 //         spinner:"spinner1"
 //     });

@@ -33,7 +33,7 @@ h1 {
 h2 {
 	font-size: 3.5em; /* 72px */
 	font-weight: 700;
-	margin-bottom: .45em;
+	margin-bottom: 1em;
 }
 
 h3 {
@@ -104,12 +104,21 @@ p {
 }
 
 .cover {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: red;
+	position: fixed;
+/*	width: 100%;
+	height: 100%;*/
+	height:100vh;
+	min-height:100vh;
 	display: none;
-	z-index: 1000;
+	z-index: 997;
+	left : 0;
+	bottom : 0;
+	right : 0;
+	top : 0;
+	background: white;
+	background-image : url('../images/ajax-loader.gif');
+	background-repeat : no-repeat;
+	background-position : center;
 }
 
 .show {
@@ -122,6 +131,12 @@ p {
 	margin-left: 30px;
 }
 
+.full {
+	height:100vh;
+	min-height:100vh;
+    position: fixed;	
+}
+
 /*
   Header
 *****************/
@@ -129,7 +144,9 @@ p {
 header {
 	width: 100%;
 	height: 100px;
-	z-index: 999;
+	z-index: 998;
+    top: 0;
+    position: fixed;
 }
 
 	#logo {
@@ -177,29 +194,28 @@ header {
 
 section.hero {
 	max-width: 1100px;
-	height: 1030px;
 	margin: 0 auto;
 }
 
 	#hero-photo {
 		float: right;
-		width: 740px;
-		height: 925px;
-		margin-top: 40px;
+		width: 700px;
+		height: 875px;
+		margin: 100px 0 50px 0;
 		background: url('../images/hero-ryan-schrader-lg.jpg');
 	}
 
 	#txt-intro {
 		position: absolute;
 		width: 430px;
-		top: 250px;
+		top: 15em;
 		margin-left: 30px;
 		z-index: 1;
 	}
 
 	#cta-work {
 		position: absolute;
-		top: 530px;
+		top: 580px;
 	}
 
 	.vertical-text {
@@ -230,6 +246,9 @@ section.hero {
 
 	.hero-photo-mobile {
 		width: 100%;
+		max-width: 600px;
+		float: right;
+		margin: 0 0 40px 0;
 		display: none;
 	}
 
@@ -239,6 +258,11 @@ section.hero {
 
 #work {
 	width: 100%;
+	clear: both;
+}
+
+#work h2 {
+	text-align: center;
 }
 
 .max-wrap {
@@ -249,7 +273,7 @@ section.hero {
 figure {
 	float: left;
 	width: 46%;
-	margin: 2%;
+	margin: 0 2%;
 }
 
 figure img {
@@ -261,18 +285,47 @@ figcaption {
 }
 
 /*
+  Content - About
+*****************/
+
+content#two p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 4.5em;
+	font-weight: 700;
+	margin: 0 0 1.5em 0;
+	line-height: 1.2em;
+}
+
+#two p.first {
+	margin-top: 6.8em;
+}
+
+#experience {
+	height: 2.5em;
+}
+
+/*
   Footer
 *****************/
 footer {
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 2em 0 6.2em 0;
+	padding: 6em 0;
+	margin-top: 4em;
 	clear: both;
+	background: #000;
 }
 
+footer h1, footer h2 {
+	color: #fff;
+}
+
+	.footer-wrap {
+		max-width: 60%;
+		margin: 0 auto;
+	}
+
 	#contact-details {
-		width: 65%;
-		padding-left: 35%;
+	    width: 80%;
+	    padding-left: 20%;
 	}
 
 		dt {
@@ -280,7 +333,7 @@ footer {
 			font-weight: 400;
 			font-size: 13px;
 			line-height: 1.5em;
-			color: #666;
+			color: #999;
 			letter-spacing: 0.07em;
 			padding: 0 0 .3em 0;
 		}
@@ -295,6 +348,7 @@ footer {
 		dd a {
 			text-decoration: none;
 			padding: .3em 0;
+			color: #fff;
 		}
 
 		dd a:hover {
@@ -304,125 +358,6 @@ footer {
   Media Queries
 *****************/
 
-@media screen and (max-width: 710px) {
-
-	#work {
-		width: 100%;
-	}
-
-	figure {
-		width: 100%;
-		margin: 0%;
-	}
-
-	figcaption {
-		margin: 1em 0 2em 1em;		
-	}
-
-	header {
-		background: white;
-	}
-
-}
-
-@media screen and (max-width: 1024px) {
-
-	#hero-photo {
-		width: 600px;
-		height: 750px;
-		background: url('../images/hero-ryan-schrader-md.jpg');
-	}
-
-	#txt-intro {
-		width: 40%;
-	}
-
-	#cta-work {
-		top: 600px;
-	}
-
-}
-
-@media screen and (max-width: 800px) {
-
-	#hero-photo {
-		width: 450px;
-		height: 563px;
-		background: url('../images/hero-ryan-schrader-sm.jpg') repeat;
-	}
-
-	body {
-		font-size: 14px;
-	}
-
-	#txt-intro {
-		width: 44%;
-	}
-
-}
-
-@media screen and (max-width: 600px) {
-
-	#hero-photo {
-		width: 90%;
-		position: relative;
-		float: left;
-	    margin: 40px 0 0 20px;
-	    height: 0;
-	    background: none;
-	}
-
-	.hero-photo-mobile {
-		display: block;
-	}
-
-	#txt-intro {
-		width: 80%;
-		position: relative;
-		float: left;
-		top: 12px;
-		margin-left: 20px;
-	}
-
-	#cta-work {
-		display: none;
-	}
-
-	/*hide status bar*/
-	#status {
-		display: none;
-	}
-
-/*	#txt-intro-p {
-		display: none;
-	}*/
-
-	#logo {
-	    margin: 20px 0 0 20px;
-	}
-
-	nav {
-	    margin-right: 20px;
-	}
-
-	section.hero {
-		height: 820px;
-	}
-
-	figcaption {
-	    margin: 1em 0 2em 20px;
-	}
-
-	.clearway {
-	    margin-left: 20px;
-	}
-
-	#contact-details {
-	    width: 70%;
-	    padding-left: 30%;
-	}
-
-}
 
 @media screen and (max-width: 1600px) {
 
@@ -432,18 +367,119 @@ footer {
 
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 1080px) {
+
+	#hero-photo {
+		width: 550px;
+		height: 688px;
+		background: url('../images/hero-ryan-schrader-md.jpg');
+	}
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+	#txt-intro {
+		width: 42%;
+	}
+
+	#cta-work {
+		display: none;
+	}
+
+	body {
+		font-size: 15px;
+	}
+
+	header {
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+
+	content#two p {
+	    font-size: 3.5em;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	#hero-photo {
+		display: none;
+	}
+
+	.hero-photo-mobile {
+		display: block;
+	}
+
+	#txt-intro {
+		float: left;
+		position: relative;
+		top: 0;
+		right:	0;
+		bottom: 0;	
+		left: 0;
+		margin: 120px 0 40px 30px;
+		width: 80%;
+	}
+
+	#status {
+		display: none;
+	}
+
+	nav a {
+	    margin: 0 0.3em;
+	}
+
+	.footer-wrap {
+	    max-width: 80%;
+	}
+
+	#contact-details {
+	    width: 92%;
+	    padding-left: 8%;
+	}
+
+	#work h2 {
+	    text-align: left;
+	    margin-left: 30px; 
+	}
+
+	h1 {
+		font-size: 3.5em;
+	}
+
+	h2 {
+		font-size: 2.5em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+	}
 
 	.max-wrap {
 		width: 100%;
 	}
 
-}
+	#two p.first {
+		margin-top: 7em;
+	}
 
-@media screen and (max-width: 360px) {
+	figure {
+		width: 100%;
+		margin: 0%;
+	}
 
-	nav a {
-	    margin: 0 .1em;
+	figcaption {
+		margin: 1em 0 2em 1.8em;		
+	}
+
+	body {
+		font-size: 14px;
+	}
+
+	content#two p {
+	    margin: 0 30px 1.5em 30px;
+	    font-size: 2.5em;
 	}
 
 }
