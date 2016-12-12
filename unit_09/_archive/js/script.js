@@ -1,12 +1,12 @@
+// LOAD INITAL CONTENT
 function getPageFromURL() {
-
     var pathname = window.location.pathname;
     var filename = pathname.substr(pathname.lastIndexOf('/') + 1);
     var page = filename.replace(".html", "")
     console.log("pathname: " + pathname + " filename: " + filename + " page: " + page);
     loadInitialContent(page);
-
 }
+
 
 function getData(element) {
 
@@ -18,6 +18,7 @@ function getData(element) {
 
 }
 
+// INTERACTIONS
 function setupInteractions() {
 
     console.log("setupInteractions()");
@@ -44,112 +45,53 @@ function setupInteractions() {
 
     );
 
-    $('nav a').click(
-        
-        function () {
-            // do something on click
-            getData(this);         
-        }
-
-    );
-
-    $('.two .nav-item').hover(
+    $('.nav-item').hover(
         
         function () {
             // do something on enter
-            var timer;
-            var self = this;
-            timer = setTimeout(function(){
-                $(self).stop(true,true).animate({
-                    top : '-=20'
-                }, 300);
-            },150);
+            $(this).animate({
+                top: '-=50px'
+            }, 400);
 
-            var timer2;
-            timer2 = setTimeout(function(){
-                $('.two .nav-item-hidden').stop(true,true).animate({
-                    top : '0'
-                }, 300);
-            },150);
+            $('.nav-item-hidden').animate({
+                top: '-=16px'
+            }, 400);
+
         }, 
 
         function () {
-            // do something on enter
-            var timer;
-            var self = this;
-            timer = setTimeout(function(){
-                $(self).stop(true,true).animate({
-                    top : '+=20'
-                }, 300);
-            },150);
+            // do something on exit
+            $(this).animate({
+                top: '+=50px'
+            }, 400);
 
-            var timer2;
-            timer2 = setTimeout(function(){
-                $('.two .nav-item-hidden').stop(true,true).animate({
-                    top : '100%'
-                }, 300);
-            },150);
+            $('.nav-item-hidden').animate({
+                top: '+=16px'
+            }, 400);
         }
-
     );
 
-    $('.one .nav-item').hover(
-        
-        function () {
-            // do something on enter
-            var timer;
-            var self = this;
-            timer = setTimeout(function(){
-                $(self).stop(true,true).animate({
-                    top : '-=20'
-                }, 300);
-            },150);
 
-            var timer2;
-            timer2 = setTimeout(function(){
-                $('.one .nav-item-hidden').stop(true,true).animate({
-                    top : '0'
-                }, 300);
-            },150);
-        }, 
+    // START TYPED
 
-        function () {
-            // do something on enter
-            var timer;
-            var self = this;
-            timer = setTimeout(function(){
-                $(self).stop(true,true).animate({
-                    top : '+=20'
-                }, 300);
-            },150);
-
-            var timer2;
-            timer2 = setTimeout(function(){
-                $('.one .nav-item-hidden').stop(true,true).animate({
-                    top : '100%'
-                }, 300);
-            },150);
-        }
-
-    );
-
-    // start typed animation
     $(function(){
+      $(".typed").typed({
+        strings: [
+            "Hi, I'm Ryan."],
+        
+        // typing speed
+        typeSpeed: 0,
+        // time before backspacing
+        backDelay: 3000,
+        // loop
+        loop: false,
+        // show cursor
+        showCursor: false,
 
-        $(".typed").typed({
-            strings: ["Hi, I'm Ryan."],
-            // typing speed
-            typeSpeed: 0,
-            // time before backspacing
-            backDelay: 3000,
-            // loop
-            loop: false,
-            // show cursor
-            showCursor: false,
-        });
-
+      });
     });
-    // end typed animation
+
+    // END TYPED 
 
 }
 
@@ -181,7 +123,7 @@ function loadInitialContent(page) {
 
 getPageFromURL();
 
-// start url handling
+// URL HANDLING
 var container = document.querySelector('nav');
 var pages = document.querySelectorAll('nav a');
 var directory = "content/"
@@ -195,8 +137,10 @@ function requestContent(file, data){
 
     var pageReady = true;
 
+    // show loading
     $('.cover').addClass("show");
     $('body').addClass("full");
+    // scroll to top
     $('body').scrollTop(0);
     // request content
     console.log('Requesting content: ' + directory + file);
@@ -241,19 +185,19 @@ function addCurrentClass(elem){
     element.classList.add('current');
 }
 
-// container.addEventListener('click', function(e){
-//     if(e.target != e.currentTarget){
-//         e.preventDefault();
-//         var data = e.target.getAttribute('data-path'),
-//         url = data + fileType;
-//         console.log(data);
-//         // addCurrentClass(data);
-//         history.pushState(data, null, url);
-//         // requestContent(url, data);
-//         document.title = defaultTitle + data;
-//     }
-// e.stopPropagation();
-// }, false);
+container.addEventListener('click', function(e){
+    if(e.target != e.currentTarget){
+        e.preventDefault();
+        var data = e.target.getAttribute('data-path'),
+        url = data + fileType;
+        console.log(data);
+        addCurrentClass(data);
+        history.pushState(data, null, url);
+        requestContent(url, data);
+        document.title = defaultTitle + data;
+    }
+e.stopPropagation();
+}, false);
 
 window.addEventListener('popstate', function(e){
     var pageName = e.state;
@@ -277,9 +221,9 @@ window.addEventListener('popstate', function(e){
     }
 
 })
-// end url handling
 
-// start change background colour on scroll
+// SCROLL BACKGROUND COLOR CHANGE
+
 $(window).scroll(function() {
   
   // selectors
@@ -309,4 +253,3 @@ $(window).scroll(function() {
   });    
   
 }).scroll();
-// end change background colour on scroll
