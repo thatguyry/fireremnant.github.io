@@ -22,6 +22,12 @@ function setupInteractions() {
 
     console.log("setupInteractions()");
 
+    $("#cta-work").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#work").offset().top
+        }, 1000);
+    });
+
     $('.project-inner').hover(
         
         function () {
@@ -137,7 +143,7 @@ function setupInteractions() {
     $(function(){
 
         $(".typed").typed({
-            strings: ["Hi, I'm Ryan."],
+            strings: ["UX/UI Digital Designer."],
             // typing speed
             typeSpeed: 0,
             // time before backspacing
